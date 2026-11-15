@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { @apply bg-page text-ink font-sans antialiased; }
+  body { @apply min-h-screen; }
+  h1, h2, h3 { @apply font-serif; }
+  button { @apply cursor-pointer; }
+  button:disabled { @apply cursor-not-allowed opacity-60; }
+  :focus-visible { @apply outline-2 outline-offset-2 outline-accent; }
+}
+
+@layer components {
+  .page-container { @apply mx-auto w-full max-w-[1200px] px-4 md:px-8 xl:px-0; }
+
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium transition-colors whitespace-nowrap; }
+  .btn-primary { @apply btn bg-accent text-white hover:bg-accent-hover; }
+  .btn-outline { @apply btn border border-strong bg-surface text-ink hover:bg-alt; }
+  .btn-ghost { @apply btn text-ink hover:bg-alt; }
+  .btn-danger { @apply btn bg-danger-soft text-danger hover:bg-[#f6d3cf]; }
+  .btn-sm { @apply px-3 py-1.5; }
+  .icon-btn { @apply inline-flex h-8 w-8 items-center justify-center rounded-lg border border-line bg-surface text-muted hover:bg-alt hover:text-ink; }
+  .icon-btn-danger { @apply icon-btn text-danger hover:bg-danger-soft hover:text-danger; }
+
+  .input { @apply w-full rounded-lg border border-strong bg-surface px-3 py-2.5 text-sm text-ink placeholder:text-subtle focus:border-accent focus:outline-none; }
+  .input-error { @apply border-danger; }
+  .label { @apply mb-1.5 block text-sm font-medium text-ink; }
+  .field-error { @apply mt-1 text-xs text-danger; }
+
+  .card { @apply rounded-xl border border-line bg-surface shadow-card; }
+  .chip { @apply inline-flex items-center rounded-md bg-alt px-2 py-1 text-xs text-muted; }
+  .eyebrow { @apply text-[11px] font-semibold uppercase tracking-wider text-accent; }
+
+  .badge { @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium; }
+  .badge::before { content: ''; @apply h-1.5 w-1.5 rounded-full bg-current; }
+
+  .table-head { @apply bg-alt text-[11px] font-semibold uppercase tracking-wider text-muted; }
+
+  /* Rendered Markdown (article page and editor preview) */
+  .article-body { @apply font-serif text-[18px] leading-8 text-ink; }
+  .article-body > * + * { @apply mt-5; }
+  .article-body h2 { @apply mt-9 text-2xl font-semibold; }
+  .article-body h3 { @apply mt-7 text-xl font-semibold; }
+  .article-body a { @apply text-accent underline underline-offset-2; }
+  .article-body ul { @apply list-disc pl-6; }
+  .article-body ol { @apply list-decimal pl-6; }
+  .article-body blockquote { @apply border-l-2 border-accent pl-5 italic text-muted; }
+  .article-body code { @apply rounded bg-alt px-1.5 py-0.5 font-mono text-[15px]; }
+  .article-body pre { @apply overflow-x-auto rounded-lg bg-ink p-4 text-sm text-alt; }
+  .article-body pre code { @apply bg-transparent p-0 text-inherit; }
+  .article-body img { @apply max-w-full rounded-lg; }
+}

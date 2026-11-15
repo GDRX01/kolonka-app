@@ -1,0 +1,36 @@
+# SECRET KEYS AND ENVIRONMENT SETTINGS
+.env
+.env.*
+!.env.example
+!.env.additions
+
+# DATABASE AND LOGS (IMPORTANT FOR PRIVACY)
+*.sqlite
+*.sqlite3
+*.db
+*.log
+
+# DEPENDENCIES AND BUILDS (HEAVY JUNK)
+vendor/
+node_modules/
+dist/
+build/
+api/public/build/
+api/public/hot
+
+# LARAVEL CACHE, SESSIONS, AND UPLOADED FILES
+api/bootstrap/cache/*.php
+api/storage/framework/cache/data/*
+api/storage/framework/sessions/*
+api/storage/framework/testing/*
+api/storage/framework/views/*
+api/storage/app/private/*
+api/storage/app/public/covers/*
+
+# TEMPORARY FILES AND SYSTEM JUNK
+structure.txt
+.phpunit.result.cache
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/api/
